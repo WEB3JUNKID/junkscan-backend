@@ -1,0 +1,11 @@
+const express = require('express');
+const app = express();
+
+const fetchNewProtocols = require('./api/fetch-new-protocols');
+
+app.use('/api/fetch-new-protocols', fetchNewProtocols);
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
